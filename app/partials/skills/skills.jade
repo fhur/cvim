@@ -1,9 +1,10 @@
 .skills-page(ng-controller="SkillsController")
-  h1 Your skills
+  h1 Your skillset
 
-  skill-list
+  .skill-list-section
+    skill-list
 
-  .create-skill
+  .create-skill-section
     form(class='form-inline', ng-submit='createSkill()')
       p
         input(type='text', ng-model='newSkillName', size='30', placeholder='e.g. Increased sales 15% over a 12 months')

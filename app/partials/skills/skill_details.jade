@@ -1,7 +1,21 @@
 .skill-details(ng-controller='SkillsController', ng-init="find()")
-  p {{skill.name}}&nbsp;
-    a(ng-click='editName()') edit
-  p {{skill.description}}&nbsp;
-    a(ng-click="editDescription()") edit
+
+  .name-section
+    p {{skill.name}}&nbsp;
+      a(ng-click='editField("name")') edit
+    .edit(ng-if='shouldEdit("name")')
+      small press enter to save
+      br
+      input(type='text', ng-model='skill.name', ng-enter="clearEdits()")
+
+  .description-section
+    p {{skill.description}}&nbsp;
+      a(ng-click='editField("description")') edit
+      .edit(ng-if='shouldEdit("description")')
+        small press enter to save
+        br
+        textarea(ng-model='skill.description', ng-enter="clearEdits()")
+
+  .dates-section
   p {{skill.start}} - {{skill.end}}
     a(ng-click="editDates()") edit
