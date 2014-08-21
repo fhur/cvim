@@ -25,4 +25,9 @@ angular.module('app.services')
       skill.id = lastSkill.id+1
       @skills.push skill
 
+    find: (id)->
+      for skill in @all()
+        return skill if skill.id == id
+      return null
+
 )

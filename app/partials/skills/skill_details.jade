@@ -1,0 +1,7 @@
+.skill-details(ng-controller='SkillsController', ng-init="find()")
+  p {{skill.name}}&nbsp;
+    a(ng-click='editName()') edit
+  p {{skill.description}}&nbsp;
+    a(ng-click="editDescription()") edit
+  p {{skill.start}} - {{skill.end}}
+    a(ng-click="editDates()") edit
