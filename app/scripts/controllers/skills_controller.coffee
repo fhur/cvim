@@ -1,13 +1,12 @@
 angular.module('app.controllers')
 .controller('SkillsController', [
-  '$scope'
-  ($scope)->
-    $scope.skills = [
-      {
-        name: "5 years doing shit"
-      }
-      {
-        name: "did some stuff here and there"
-      }
-    ]
+  '$scope', 'Skills'
+  ($scope, Skills)->
+
+    $scope.skills = Skills.all()
+
+    $scope.createSkill = ()->
+      Skills.add(name: $scope.newSkillName)
+      $scope.newSkillName = ""
+
 ])

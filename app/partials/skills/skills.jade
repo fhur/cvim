@@ -2,3 +2,9 @@
   h1 Your skills
 
   skill-list
+
+  .create-skill
+    form(class='form-inline', ng-submit='createSkill()')
+      p
+        input(type='text', ng-model='newSkillName', size='30', placeholder='e.g. Increased sales 15% over a 12 months')
+        input.btn.btn-primary(type='submit', value='add')
