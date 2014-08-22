@@ -1,7 +1,8 @@
 .skill-details(ng-controller='SkillsController', ng-init="find()")
 
   .name-section
-    p {{skill.name}}&nbsp;
+    h4.title Skill title
+    p.content {{skill.name}}&nbsp;
       a(ng-click='editField("name")') edit
     .edit(ng-if='shouldEdit("name")')
       small press enter to save
@@ -9,13 +10,26 @@
       input(type='text', ng-model='skill.name', ng-enter="clearEdits()")
 
   .description-section
-    p {{skill.description}}&nbsp;
+    h4.title Detailed description
+    p.content {{skill.description}}&nbsp;
       a(ng-click='editField("description")') edit
-      .edit(ng-if='shouldEdit("description")')
-        small press enter to save
-        br
-        textarea(ng-model='skill.description', ng-enter="clearEdits()")
+    .edit(ng-if='shouldEdit("description")')
+      small press enter to save
+      br
+      textarea(ng-model='skill.description', ng-enter="clearEdits()")
 
   .dates-section
-  p {{skill.start}} - {{skill.end}}
-    a(ng-click="editDates()") edit
+    h4.title Dates
+    p.content {{skill.from}} - {{skill.to}}&nbsp;
+      a(ng-click='editField("dates")') edit
+    .edit(ng-if='shouldEdit("dates")')
+      small press enter to save
+      br
+      input(type='text', ng-model='skill.from', placeholder='From')
+      |  -&nbsp
+      input(type='text', ng-model='skill.to', placeholder='To', ng-enter="clearEdits()")
+
+  .save-changes-section(ng-if="hasChanges()")
+    button(ng-click="saveChanges()") Save changes
+
+
