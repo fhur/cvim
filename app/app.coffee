@@ -20,12 +20,10 @@ App.config([
 
   $routeProvider
 
-    .when('/todo', {templateUrl: '/partials/todo.html'})
-    .when('/view1', {templateUrl: '/partials/partial1.html'})
-    .when('/view2', {templateUrl: '/partials/partial2.html'})
     .when('/skills', { templateUrl: '/partials/skills.html'} )
     .when('/skills/:id', { templateUrl: '/partials/skill_details.html' })
     .when('/resumes', { templateUrl: '/partials/resumes.html' })
+    .when('/resumes/:id', { templateUrl: '/partials/resumes.html' })
 
     # Catch all
     .otherwise({redirectTo: '/skills'})
