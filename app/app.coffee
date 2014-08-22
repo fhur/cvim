@@ -25,6 +25,7 @@ App.config([
     .when('/view2', {templateUrl: '/partials/partial2.html'})
     .when('/skills', { templateUrl: '/partials/skills.html'} )
     .when('/skills/:id', { templateUrl: '/partials/skill_details.html' })
+    .when('/resumes', { templateUrl: '/partials/resumes.html' })
 
     # Catch all
     .otherwise({redirectTo: '/skills'})
