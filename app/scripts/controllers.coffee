@@ -2,7 +2,7 @@
 
 ### Controllers ###
 
-angular.module('app.controllers', [])
+angular.module('app.controllers', ['ngLinkedIn'])
 
 .controller('AppCtrl', [
   '$scope'

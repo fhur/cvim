@@ -24,10 +24,13 @@ App.config([
     .when('/skills/:id', { templateUrl: '/partials/skill_details.html' })
     .when('/resumes', { templateUrl: '/partials/resumes.html' })
     .when('/resumes/:id', { templateUrl: '/partials/resumes.html' })
-
+    .when('/signin', { templateUrl: '/partials/signin.html' })
     # Catch all
     .otherwise({redirectTo: '/skills'})
 
   # Without server side support html5 must be disabled.
   $locationProvider.html5Mode(false)
 ])
+.config(($linkedInProvider)->
+  $linkedInProvider.set('appKey', '75rr1q4o3sec6s')
+)
